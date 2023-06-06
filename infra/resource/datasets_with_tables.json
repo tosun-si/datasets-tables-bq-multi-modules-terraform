@@ -1,0 +1,32 @@
+[
+  {
+    "datasetId": "team_league_raw_multi_modules",
+    "datasetRegion": "EU",
+    "datasetFriendlyName": "Team league Dataset containing raw data",
+    "datasetDescription": "Team league raw Dataset description",
+    "tables": [
+      {
+        "tableId": "team_stat_raw",
+        "tableSchemaPath": "resource/schema/team_league_raw/team_stat_raw.json"
+      }
+    ]
+  },
+  {
+    "datasetId": "team_league_multi_modules",
+    "datasetRegion": "EU",
+    "datasetFriendlyName": "Team league Dataset containing domain data",
+    "datasetDescription": "Team league domain Dataset description",
+    "tables": [
+      {
+        "tableId": "team_stat",
+        "tableSchemaPath": "resource/schema/team_league/team_stat.json",
+        "partitionType": "DAY",
+        "partitionField": "ingestionDate",
+        "clustering": [
+          "teamName",
+          "teamSlogan"
+        ]
+      }
+    ]
+  }
+]
